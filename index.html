@@ -976,8 +976,8 @@
   <main id="top">
     <section class="hero" aria-label="Jasco's Landscaping introduction">
       <div class="hero-media" aria-hidden="true">
-        <video class="hero-video" autoplay muted loop playsinline poster="assets/fast/hero-lawn.jpg">
-          <!-- Hero video slot: upload assets/hero-video.mp4 and add a source tag here when ready. -->
+        <video class="hero-video" autoplay muted loop playsinline preload="none" poster="assets/fast/hero-lawn.jpg">
+          <source data-src="assets/hero-video.mp4" type="video/mp4" />
         </video>
       </div>
 
@@ -1181,6 +1181,7 @@
     const menuToggle = document.getElementById("menuToggle");
     const sectionMenu = document.getElementById("sectionMenu");
     const lazyImages = document.querySelectorAll("img[data-src]");
+    const heroVideo = document.querySelector(".hero-video");
 
     function loadImage(img) {
       const nextSrc = img.dataset.src;
@@ -1203,6 +1204,25 @@
     } else {
       lazyImages.forEach(loadImage);
     }
+
+    function startHeroVideo() {
+      if (!heroVideo) return;
+      heroVideo.querySelectorAll("source[data-src]").forEach((source) => {
+        source.src = source.dataset.src;
+        source.removeAttribute("data-src");
+      });
+      heroVideo.load();
+      heroVideo.play().catch(() => {});
+    }
+
+    window.addEventListener("load", () => {
+      const start = () => startHeroVideo();
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(start, { timeout: 1200 });
+      } else {
+        setTimeout(start, 500);
+      }
+    });
 
     function setMenu(open) {
       menuToggle.setAttribute("aria-expanded", String(open));
