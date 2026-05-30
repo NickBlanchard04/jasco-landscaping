@@ -9,6 +9,8 @@
 
   <link rel="icon" type="image/png" href="assets/logo-placeholder.png" />
   <link rel="apple-touch-icon" href="assets/logo-placeholder.png" />
+  <link rel="preload" as="image" href="assets/fast/hero-lawn.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/fast/jasco-logo-hero.png" fetchpriority="high" />
 
   <meta name="description" content="Jasco's Landscaping provides lawn care, mulch installation, seasonal cleanup, hedge trimming, edging, and landscape maintenance in Greenfield, NY and nearby areas." />
   <meta name="keywords" content="landscaping Greenfield NY, lawn care Greenfield NY, mulch installation Greenfield NY, hedge trimming Greenfield NY, cleanup Greenfield NY, landscaping Saratoga Springs NY, landscaping Wilton NY, landscaping Corinth NY" />
@@ -117,30 +119,23 @@
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
       min-width: 0;
+      color: #fff;
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", "Arial Narrow", sans-serif;
       font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .brand-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.92);
-      object-fit: cover;
-    }
-
-    .brand span {
       white-space: nowrap;
-      font-size: 0.94rem;
+      font-size: 1.35rem;
+      letter-spacing: 0.035em;
+      line-height: 1;
+      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.55);
     }
 
     .nav-links {
+      position: relative;
       display: flex;
       align-items: center;
-      gap: 26px;
+      justify-content: flex-end;
     }
 
     .nav-link {
@@ -155,6 +150,85 @@
     .nav-link:hover,
     .nav-link:focus-visible {
       color: #ffffff;
+    }
+
+    .menu-toggle {
+      width: 52px;
+      height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      color: #fff;
+      background: linear-gradient(180deg, var(--accent-bright), var(--accent));
+      border: 1px solid rgba(255, 255, 255, 0.20);
+      box-shadow: 0 14px 30px rgba(49, 119, 46, 0.36);
+      cursor: pointer;
+      transition: transform 0.18s ease, background 0.18s ease;
+    }
+
+    .menu-toggle:hover,
+    .menu-toggle:focus-visible,
+    .menu-toggle[aria-expanded="true"] {
+      background: linear-gradient(180deg, #6bd14e, var(--accent));
+    }
+
+    .waffle-grid {
+      width: 22px;
+      height: 22px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+    }
+
+    .waffle-grid span {
+      width: 4px;
+      height: 4px;
+      border-radius: 2px;
+      background: currentColor;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.28);
+    }
+
+    .section-menu {
+      position: absolute;
+      top: calc(100% + 14px);
+      right: 0;
+      width: min(280px, calc(100vw - 32px));
+      display: grid;
+      gap: 6px;
+      padding: 10px;
+      border-radius: 14px;
+      background: rgba(8, 13, 12, 0.94);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.48);
+      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(16px);
+    }
+
+    .section-menu[hidden] {
+      display: none;
+    }
+
+    .section-menu a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 46px;
+      padding: 0 14px;
+      border-radius: 9px;
+      color: #fff;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: background 0.18s ease, border-color 0.18s ease;
+    }
+
+    .section-menu a:hover,
+    .section-menu a:focus-visible {
+      background: rgba(49, 119, 46, 0.36);
+      border-color: rgba(93, 187, 69, 0.48);
     }
 
     .btn {
@@ -211,7 +285,8 @@
     }
 
     .hero {
-      min-height: 92vh;
+      min-height: 100vh;
+      min-height: 100svh;
       position: relative;
       display: grid;
       align-items: center;
@@ -229,7 +304,7 @@
 
     .hero-media {
       z-index: -3;
-      background: url("assets/lawn-2.jpeg") center / cover no-repeat;
+      background: url("assets/fast/hero-lawn.jpg") center / cover no-repeat;
     }
 
     .hero-media::before {
@@ -257,10 +332,11 @@
     }
 
     .hero-logo {
-      width: min(620px, 88vw);
-      max-height: 360px;
+      width: min(500px, 82vw);
+      max-height: 310px;
       object-fit: contain;
       filter: drop-shadow(0 22px 42px rgba(0, 0, 0, 0.55));
+      image-rendering: auto;
     }
 
     .hero-copy {
@@ -270,9 +346,9 @@
     }
 
     .hero-copy h1 {
-      width: min(900px, 100%);
-      font-size: clamp(2rem, 4.3vw, 4rem);
-      line-height: 1.06;
+      width: min(820px, 100%);
+      font-size: clamp(1.8rem, 3.4vw, 3.1rem);
+      line-height: 1.12;
       font-weight: 900;
       letter-spacing: 0;
       text-shadow: 0 5px 24px rgba(0, 0, 0, 0.62);
@@ -360,7 +436,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.45s ease;
+      transition: transform 0.45s ease, opacity 0.2s ease;
     }
 
     .service-card:hover img,
@@ -510,7 +586,17 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.32s ease;
+      transition: transform 0.32s ease, opacity 0.2s ease;
+    }
+
+    .service-card img[data-src],
+    .gallery-item img[data-src] {
+      opacity: 0;
+    }
+
+    .service-card img.is-loaded,
+    .gallery-item img.is-loaded {
+      opacity: 1;
     }
 
     .gallery-item:hover img,
@@ -713,31 +799,27 @@
         width: min(calc(100% - 24px), var(--max));
       }
 
-      .brand span {
-        font-size: 0.78rem;
+      .brand {
+        font-size: 1.12rem;
       }
 
-      .nav-links .nav-link {
-        display: none;
-      }
-
-      .topbar .btn {
-        min-height: 42px;
-        padding: 0 14px;
-        font-size: 0.78rem;
+      .menu-toggle {
+        width: 46px;
+        height: 46px;
       }
 
       .hero {
-        min-height: 88vh;
+        min-height: 100vh;
+        min-height: 100svh;
         padding: calc(var(--header-h) + 30px) 0 72px;
       }
 
       .hero-logo {
-        width: min(520px, 92vw);
+        width: min(430px, 88vw);
       }
 
       .hero-copy h1 {
-        font-size: clamp(1.9rem, 8vw, 3.1rem);
+        font-size: clamp(1.7rem, 7vw, 2.6rem);
       }
 
       .hero-actions {
@@ -785,14 +867,11 @@
     }
 
     @media (max-width: 560px) {
-      .brand-mark {
-        width: 36px;
-        height: 36px;
-        border-radius: 8px;
-      }
-
-      .brand span {
-        display: none;
+      .brand {
+        font-size: 0.98rem;
+        max-width: calc(100vw - 96px);
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       .services-grid,
@@ -873,18 +952,23 @@
   <header class="topbar">
     <div class="container topbar-inner">
       <a class="brand" href="#top" aria-label="Jasco's Landscaping home">
-        <img class="brand-mark" src="assets/jasco-logo-transparent.png" alt="" />
-        <span>Jasco's Landscaping</span>
+        Jasco's Landscaping
       </a>
 
       <nav class="nav-links" aria-label="Primary navigation">
-        <a class="nav-link" href="#services">Services</a>
-        <a class="nav-link" href="#gallery">Our Work</a>
-        <a class="nav-link" href="#contact">Contact</a>
-        <a class="btn btn-primary" href="sms:+18382025311?body=Hi%20Jasco%27s%20Landscaping%2C%20I%20would%20like%20a%20quote%20for%20landscaping%20services.%20Please%20let%20me%20know%20your%20next%20available%20time." aria-label="Text Jasco's Landscaping for a quote">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.9 19.1c-1.2-1-1.9-2.5-1.9-4.1V8.8C3 5.6 5.6 3 8.8 3h6.4C18.4 3 21 5.6 21 8.8V15c0 3.2-2.6 5.8-5.8 5.8H9.1l-3.5 2.1c-.8.5-1.8-.2-1.6-1.1l.9-2.7Zm1.9-1.2.4.3-.5 1.5 1.7-1h6.8c2.1 0 3.8-1.7 3.8-3.8V8.8C19 6.7 17.3 5 15.2 5H8.8C6.7 5 5 6.7 5 8.8V15c0 1.1.5 2.2 1.4 2.9h.4Z"/></svg>
-          Text Us
-        </a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open section menu" aria-expanded="false" aria-controls="sectionMenu">
+          <span class="waffle-grid" aria-hidden="true">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </span>
+        </button>
+        <div class="section-menu" id="sectionMenu" hidden>
+          <a href="#services">Services</a>
+          <a href="#gallery">Our Work</a>
+          <a href="#contact">Contact</a>
+          <a href="sms:+18382025311?body=Hi%20Jasco%27s%20Landscaping%2C%20I%20would%20like%20a%20quote%20for%20landscaping%20services.%20Please%20let%20me%20know%20your%20next%20available%20time.">Text For Quote</a>
+        </div>
       </nav>
     </div>
   </header>
@@ -892,17 +976,16 @@
   <main id="top">
     <section class="hero" aria-label="Jasco's Landscaping introduction">
       <div class="hero-media" aria-hidden="true">
-        <video class="hero-video" autoplay muted loop playsinline poster="assets/lawn-2.jpeg">
+        <video class="hero-video" autoplay muted loop playsinline poster="assets/fast/hero-lawn.jpg">
           <!-- Hero video slot: upload assets/hero-video.mp4 and add a source tag here when ready. -->
         </video>
       </div>
 
       <div class="container hero-content">
-        <img class="hero-logo" src="assets/jasco-logo-transparent.png" alt="Jasco's Landscaping, Greenfield NY" />
+        <img class="hero-logo" src="assets/fast/jasco-logo-hero.png" alt="Jasco's Landscaping, Greenfield NY" fetchpriority="high" decoding="async" />
 
         <div class="hero-copy">
-          <h1>Clean, sharp landscaping in Greenfield, NY.</h1>
-          <p>Lawn care, mulch, cleanup, edging, hedge trimming, and property maintenance with fast local scheduling.</p>
+          <h1>We do the work we love and you will love the work we do.</h1>
         </div>
 
         <div class="hero-actions" aria-label="Primary actions">
@@ -930,7 +1013,7 @@
         <div class="services-grid">
           <article class="service-card" data-gallery-target="lawn" tabindex="0">
             <span class="view-gallery-badge">View Gallery</span>
-            <img src="assets/lawn-2.jpeg" alt="Freshly mowed lawn" />
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-lawn-2.jpg" alt="Freshly mowed lawn" decoding="async" />
             <div class="service-content">
               <h3>Lawn Mowing</h3>
               <p>Clean cuts, reliable scheduling, and sharp curb appeal.</p>
@@ -940,7 +1023,7 @@
 
           <article class="service-card" data-gallery-target="mulch" tabindex="0">
             <span class="view-gallery-badge">View Gallery</span>
-            <img src="assets/mulch-1.jpeg" alt="Fresh mulch installation" />
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-mulch-1.jpg" alt="Fresh mulch installation" decoding="async" />
             <div class="service-content">
               <h3>Mulch Installation</h3>
               <p>Fresh beds, cleaner borders, and a finished look.</p>
@@ -950,7 +1033,7 @@
 
           <article class="service-card" data-gallery-target="hedge" tabindex="0">
             <span class="view-gallery-badge">View Gallery</span>
-            <img src="assets/hedge-2.jpeg" alt="Trimmed hedge line" />
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-hedge-2.jpg" alt="Trimmed hedge line" decoding="async" />
             <div class="service-content">
               <h3>Hedge Trimming</h3>
               <p>Neat edges and shaped greenery around your property.</p>
@@ -960,7 +1043,7 @@
 
           <article class="service-card" data-gallery-target="equipment" tabindex="0">
             <span class="view-gallery-badge">View Gallery</span>
-            <img src="assets/jacob-hero.JPG" alt="Jasco's Landscaping equipment" />
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-equipment.jpg" alt="Jasco's Landscaping equipment" decoding="async" />
             <div class="service-content">
               <h3>Cleanup & Maintenance</h3>
               <p>Seasonal cleanup, edging, and ongoing property care.</p>
@@ -990,52 +1073,52 @@
 
         <div class="gallery-grid">
           <button class="gallery-item featured" type="button" data-category="equipment">
-            <img src="assets/jacob-hero.JPG" alt="Jasco's Landscaping equipment on site" />
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-equipment.jpg" data-full="assets/fast/full-equipment.jpg" alt="Jasco's Landscaping equipment on site" decoding="async" />
             <span class="item-label">Equipment</span>
           </button>
 
           <button class="gallery-item" type="button" data-category="lawn">
-            <img src="assets/lawn-1.jpeg" alt="Lawn care work by Jasco's Landscaping" />
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-lawn-1.jpg" data-full="assets/fast/full-lawn-1.jpg" alt="Lawn care work by Jasco's Landscaping" decoding="async" />
             <span class="item-label">Lawn Care</span>
           </button>
 
           <button class="gallery-item" type="button" data-category="lawn">
-            <img src="assets/lawn-2.jpeg" alt="Freshly mowed lawn stripes" />
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-lawn-2.jpg" data-full="assets/fast/full-lawn-2.jpg" alt="Freshly mowed lawn stripes" decoding="async" />
             <span class="item-label">Lawn Care</span>
           </button>
 
           <button class="gallery-item" type="button" data-category="lawn">
-            <img src="assets/lawn-3.jpeg" alt="Residential lawn care result" />
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-lawn-3.jpg" data-full="assets/fast/full-lawn-3.jpg" alt="Residential lawn care result" decoding="async" />
             <span class="item-label">Lawn Care</span>
           </button>
 
           <button class="gallery-item featured" type="button" data-category="mulch">
-            <img src="assets/mulch-1.jpeg" alt="Mulch bed installation" />
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-mulch-1.jpg" data-full="assets/fast/full-mulch-1.jpg" alt="Mulch bed installation" decoding="async" />
             <span class="item-label">Mulch</span>
           </button>
 
           <button class="gallery-item" type="button" data-category="mulch">
-            <img src="assets/mulch-2.jpeg" alt="Finished mulch around landscaping" />
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-mulch-2.jpg" data-full="assets/fast/full-mulch-2.jpg" alt="Finished mulch around landscaping" decoding="async" />
             <span class="item-label">Mulch</span>
           </button>
 
           <button class="gallery-item" type="button" data-category="mulch">
-            <img src="assets/mulch-3.jpeg" alt="Fresh mulch and clean garden bed" />
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-mulch-3.jpg" data-full="assets/fast/full-mulch-3.jpg" alt="Fresh mulch and clean garden bed" decoding="async" />
             <span class="item-label">Mulch</span>
           </button>
 
           <button class="gallery-item" type="button" data-category="hedge">
-            <img src="assets/hedge-1.JPG" alt="Hedge trimming work" />
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-hedge-1.jpg" data-full="assets/fast/full-hedge-1.jpg" alt="Hedge trimming work" decoding="async" />
             <span class="item-label">Hedge</span>
           </button>
 
           <button class="gallery-item featured" type="button" data-category="hedge">
-            <img src="assets/hedge-2.jpeg" alt="Tall trimmed hedges beside a lawn" />
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-hedge-2.jpg" data-full="assets/fast/full-hedge-2.jpg" alt="Tall trimmed hedges beside a lawn" decoding="async" />
             <span class="item-label">Hedge</span>
           </button>
 
           <button class="gallery-item" type="button" data-category="hedge">
-            <img src="assets/hedge-3.jpeg" alt="Clean hedge trimming and lawn care" />
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-hedge-3.jpg" data-full="assets/fast/full-hedge-3.jpg" alt="Clean hedge trimming and lawn care" decoding="async" />
             <span class="item-label">Hedge</span>
           </button>
         </div>
@@ -1095,6 +1178,48 @@
     const modal = document.getElementById("galleryModal");
     const modalImage = document.getElementById("modalImage");
     const modalClose = document.querySelector(".modal-close");
+    const menuToggle = document.getElementById("menuToggle");
+    const sectionMenu = document.getElementById("sectionMenu");
+    const lazyImages = document.querySelectorAll("img[data-src]");
+
+    function loadImage(img) {
+      const nextSrc = img.dataset.src;
+      if (!nextSrc) return;
+      img.addEventListener("load", () => img.classList.add("is-loaded"), { once: true });
+      img.src = nextSrc;
+      img.removeAttribute("data-src");
+    }
+
+    if ("IntersectionObserver" in window) {
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          loadImage(entry.target);
+          observer.unobserve(entry.target);
+        });
+      }, { rootMargin: "0px 0px" });
+
+      lazyImages.forEach((img) => imageObserver.observe(img));
+    } else {
+      lazyImages.forEach(loadImage);
+    }
+
+    function setMenu(open) {
+      menuToggle.setAttribute("aria-expanded", String(open));
+      sectionMenu.hidden = !open;
+    }
+
+    menuToggle.addEventListener("click", () => {
+      setMenu(menuToggle.getAttribute("aria-expanded") !== "true");
+    });
+
+    sectionMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => setMenu(false));
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!event.target.closest(".nav-links")) setMenu(false);
+    });
 
     function setFilter(category) {
       filterButtons.forEach((button) => {
@@ -1133,7 +1258,7 @@
     });
 
     function openModal(img) {
-      modalImage.src = img.src;
+      modalImage.src = img.dataset.full || img.src;
       modalImage.alt = img.alt;
       modal.classList.add("is-open");
       modal.setAttribute("aria-hidden", "false");
@@ -1162,6 +1287,10 @@
     });
 
     document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        setMenu(false);
+      }
+
       if (event.key === "Escape" && modal.classList.contains("is-open")) {
         closeModal();
       }
