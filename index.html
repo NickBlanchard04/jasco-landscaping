@@ -10,7 +10,8 @@
   <link rel="icon" type="image/png" href="assets/fast/favicon.png" />
   <link rel="apple-touch-icon" href="assets/fast/apple-touch-icon.png" />
   <link rel="preload" as="image" href="assets/fast/jasco-landscaping-greenfield-ny-hero-video-poster.jpg" fetchpriority="high" />
-  <link rel="preload" as="image" href="assets/fast/jasco-landscaping-greenfield-ny-logo-transparent.png" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/fast/jasco-landscaping-greenfield-ny-logo-480.png" media="(max-width: 760px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/fast/jasco-landscaping-greenfield-ny-logo-720.png" media="(min-width: 761px)" fetchpriority="high" />
 
   <meta name="description" content="Jasco's Landscaping provides lawn care, mulch installation, seasonal cleanup, hedge trimming, edging, and landscape maintenance in Greenfield, NY and nearby areas." />
   <meta name="keywords" content="landscaping Greenfield NY, lawn care Greenfield NY, mulch installation Greenfield NY, hedge trimming Greenfield NY, cleanup Greenfield NY, landscaping Saratoga Springs NY, landscaping Wilton NY, landscaping Corinth NY" />
@@ -332,10 +333,10 @@
     }
 
     .hero-logo {
-      width: min(500px, 82vw);
-      max-height: 310px;
-      object-fit: contain;
-      filter: drop-shadow(0 22px 42px rgba(0, 0, 0, 0.55));
+      display: block;
+      width: min(465px, 82vw);
+      aspect-ratio: 3 / 2;
+      background: url("assets/fast/jasco-landscaping-greenfield-ny-logo-720.png") center / contain no-repeat;
       image-rendering: auto;
     }
 
@@ -815,6 +816,7 @@
       }
 
       .hero-logo {
+        background-image: url("assets/fast/jasco-landscaping-greenfield-ny-logo-480.png");
         width: min(430px, 88vw);
       }
 
@@ -982,7 +984,7 @@
       </div>
 
       <div class="container hero-content">
-        <img class="hero-logo" src="assets/fast/jasco-landscaping-greenfield-ny-logo-transparent.png" width="720" height="556" alt="Jasco's Landscaping logo for Greenfield NY lawn care and landscaping" fetchpriority="high" decoding="async" />
+        <span class="hero-logo" aria-hidden="true"></span>
 
         <div class="hero-copy">
           <h1>We do the work we love and you will love the work we do.</h1>
@@ -1259,6 +1261,8 @@
 
     function startHeroVideo() {
       if (!heroVideo) return;
+      if (window.matchMedia("(max-width: 760px)").matches) return;
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
       heroVideo.querySelectorAll("source[data-src]").forEach((source) => {
         source.src = source.dataset.src;
         source.removeAttribute("data-src");
@@ -1268,11 +1272,11 @@
     }
 
     window.addEventListener("load", () => {
-      const start = () => startHeroVideo();
+      const start = () => window.setTimeout(startHeroVideo, 1800);
       if ("requestIdleCallback" in window) {
-        requestIdleCallback(start, { timeout: 1200 });
+        requestIdleCallback(start, { timeout: 2000 });
       } else {
-        setTimeout(start, 500);
+        setTimeout(start, 1200);
       }
     });
 
