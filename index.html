@@ -978,8 +978,8 @@
   <main id="top">
     <section class="hero" aria-label="Jasco's Landscaping introduction">
       <div class="hero-media" aria-hidden="true">
-        <video class="hero-video" autoplay muted loop playsinline preload="none" poster="assets/fast/jasco-landscaping-greenfield-ny-hero-video-poster.jpg">
-          <source data-src="assets/jasco-landscaping-greenfield-ny-hero-video.mp4" type="video/mp4" />
+        <video class="hero-video" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="assets/fast/jasco-landscaping-greenfield-ny-hero-video-poster.jpg">
+          <source src="assets/jasco-landscaping-greenfield-ny-hero-video.mp4" type="video/mp4" />
         </video>
       </div>
 
@@ -1262,21 +1262,16 @@
     function startHeroVideo() {
       if (!heroVideo) return;
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-      heroVideo.querySelectorAll("source[data-src]").forEach((source) => {
-        source.src = source.dataset.src;
-        source.removeAttribute("data-src");
-      });
-      heroVideo.load();
       heroVideo.play().catch(() => {});
     }
 
-    window.addEventListener("load", () => {
-      const start = () => window.setTimeout(startHeroVideo, 650);
-      if ("requestIdleCallback" in window) {
-        requestIdleCallback(start, { timeout: 1200 });
-      } else {
-        setTimeout(start, 650);
-      }
+    const scheduleHeroVideo = () => window.setTimeout(startHeroVideo, 250);
+    scheduleHeroVideo();
+    window.addEventListener("load", scheduleHeroVideo, { once: true });
+    ["pointerdown", "touchstart", "scroll"].forEach((eventName) => {
+      window.addEventListener(eventName, () => {
+        if (heroVideo && heroVideo.paused) startHeroVideo();
+      }, { once: true, passive: true });
     });
 
     function setMenu(open) {
