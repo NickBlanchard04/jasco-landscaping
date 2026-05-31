@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <title>Jasco's Landscaping | Greenfield, NY Landscaping Services</title>
+  <title>Jasco's Landscaping | Greenfield, Saratoga Springs & Wilton NY</title>
 
   <link rel="icon" type="image/png" href="assets/fast/favicon.png" />
   <link rel="apple-touch-icon" href="assets/fast/apple-touch-icon.png" />
@@ -13,21 +13,21 @@
   <link rel="preload" as="image" href="assets/fast/jasco-landscaping-greenfield-ny-logo-480.png" media="(max-width: 760px)" fetchpriority="high" />
   <link rel="preload" as="image" href="assets/fast/jasco-landscaping-greenfield-ny-logo-720.png" media="(min-width: 761px)" fetchpriority="high" />
 
-  <meta name="description" content="Jasco's Landscaping provides lawn care, mulch installation, seasonal cleanup, hedge trimming, edging, and landscape maintenance in Greenfield, NY and nearby areas." />
-  <meta name="keywords" content="landscaping Greenfield NY, lawn care Greenfield NY, mulch installation Greenfield NY, hedge trimming Greenfield NY, cleanup Greenfield NY, landscaping Saratoga Springs NY, landscaping Wilton NY, landscaping Corinth NY" />
+  <meta name="description" content="Jasco's Landscaping provides lawn mowing, mulch installation, hedge trimming, cleanup, and landscape maintenance in Greenfield, Saratoga Springs, Wilton, and nearby NY communities. Text for a quote." />
+  <meta name="keywords" content="landscaping Greenfield NY, lawn care Greenfield NY, lawn mowing Greenfield NY, mulch installation Greenfield NY, hedge trimming Greenfield NY, landscaping Saratoga Springs NY, lawn care Saratoga Springs NY, landscaping Wilton NY, landscaping Corinth NY" />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Jasco's Landscaping" />
   <meta name="theme-color" content="#0b1110" />
 
-  <meta property="og:title" content="Jasco's Landscaping | Greenfield, NY" />
-  <meta property="og:description" content="Clean, sharp landscaping for homes and properties in Greenfield, NY and nearby areas." />
+  <meta property="og:title" content="Jasco's Landscaping | Greenfield, Saratoga Springs & Wilton NY" />
+  <meta property="og:description" content="Local lawn care, mulch installation, hedge trimming, cleanup, and landscape maintenance for Greenfield, Saratoga Springs, Wilton, and nearby NY communities." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:image" content="assets/jasco-landscaping-greenfield-ny-logo-transparent.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Jasco's Landscaping | Greenfield, NY" />
-  <meta name="twitter:description" content="Professional landscaping and lawn care for homes and local properties." />
+  <meta name="twitter:title" content="Jasco's Landscaping | Greenfield, Saratoga Springs & Wilton NY" />
+  <meta name="twitter:description" content="Professional landscaping and lawn care for homes in Greenfield, Saratoga Springs, Wilton, and nearby NY communities." />
 
   <style>
     :root {
@@ -377,6 +377,73 @@
 
     section {
       padding: 78px 0;
+      scroll-margin-top: var(--header-h);
+    }
+
+    .local-trust {
+      padding: 42px 0;
+      background: #0b1110;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .local-trust-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+      gap: 32px;
+      align-items: start;
+    }
+
+    .eyebrow {
+      margin-bottom: 10px;
+      color: var(--accent-bright);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .local-trust h2 {
+      max-width: 820px;
+      font-size: clamp(1.9rem, 3.4vw, 3.05rem);
+      line-height: 1.05;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .local-trust p {
+      margin-top: 14px;
+      max-width: 820px;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .trust-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .trust-list li {
+      display: grid;
+      gap: 4px;
+      padding: 16px;
+      border-left: 3px solid var(--accent-bright);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .trust-list strong {
+      color: #fff;
+      font-size: 0.92rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .trust-list span {
+      color: var(--muted);
+      font-size: 0.96rem;
     }
 
     .section-head {
@@ -853,6 +920,14 @@
         align-items: start;
       }
 
+      .local-trust {
+        padding: 38px 0;
+      }
+
+      .local-trust-inner {
+        grid-template-columns: 1fr;
+      }
+
       .service-card {
         min-height: 350px;
       }
@@ -941,6 +1016,10 @@
         min-height: 330px;
       }
 
+      .local-trust h2 {
+        font-size: 2rem;
+      }
+
       .service-content {
         padding: 22px;
       }
@@ -980,24 +1059,72 @@
   {
     "@context": "https://schema.org",
     "@type": "LandscapeService",
+    "@id": "https://jascolandscaping.com/#landscape-service",
     "name": "Jasco's Landscaping",
-    "description": "Local landscaping and lawn care company serving Greenfield, New York, Saratoga Springs, Wilton, Corinth, and nearby communities.",
+    "description": "Greenfield, NY landscaping company providing lawn mowing, mulch installation, hedge trimming, seasonal cleanup, edging, planting bed cleanup, and property maintenance near Saratoga Springs and Wilton.",
+    "url": "https://jascolandscaping.com/",
+    "logo": "https://jascolandscaping.com/assets/fast/jasco-landscaping-greenfield-ny-logo-720.png",
+    "image": [
+      "https://jascolandscaping.com/assets/fast/jasco-landscaping-greenfield-ny-logo-720.png",
+      "https://jascolandscaping.com/assets/fast/full-green-lawn-mowing-stripes-tree-line-greenfield-ny.jpg",
+      "https://jascolandscaping.com/assets/fast/full-black-mulch-flower-bed-installation-greenfield-ny.jpg"
+    ],
+    "priceRange": "$$",
     "areaServed": [
       { "@type": "City", "name": "Greenfield" },
       { "@type": "City", "name": "Saratoga Springs" },
       { "@type": "City", "name": "Wilton" },
       { "@type": "City", "name": "Corinth" },
+      { "@type": "City", "name": "Lake Luzerne" },
+      { "@type": "City", "name": "Ballston Spa" },
+      { "@type": "AdministrativeArea", "name": "Saratoga County" },
       { "@type": "State", "name": "New York" }
     ],
     "email": "mailto:Jacoblafaver942@gmail.com",
     "telephone": "+18382025311",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+18382025311",
+      "contactType": "customer service",
+      "areaServed": "Greenfield, Saratoga Springs, Wilton, and nearby New York communities",
+      "availableLanguage": "English"
+    },
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Greenfield",
       "addressRegion": "NY",
       "addressCountry": "US"
     },
-    "url": "https://jascolandscaping.com/"
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Landscaping services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Lawn mowing and lawn care",
+            "serviceType": "Residential lawn mowing and lawn care"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Mulch installation and planting bed cleanup",
+            "serviceType": "Mulch installation, edging, and planting bed maintenance"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Hedge trimming and seasonal cleanup",
+            "serviceType": "Hedge trimming, cleanup, and property maintenance"
+          }
+        }
+      ]
+    }
   }
   </script>
 </head>
@@ -1054,52 +1181,77 @@
       </div>
     </section>
 
+    <section class="local-trust" aria-labelledby="service-area-title">
+      <div class="container local-trust-inner">
+        <div>
+          <p class="eyebrow">Local landscaping company</p>
+          <h2 id="service-area-title">Landscaping in Greenfield, Saratoga Springs, and Wilton, NY</h2>
+          <p>Jasco's Landscaping helps homeowners and property owners with lawn mowing, mulch installation, planting bed cleanup, hedge trimming, edging, seasonal cleanup, and ongoing landscape maintenance.</p>
+        </div>
+
+        <ul class="trust-list" aria-label="Local service details">
+          <li>
+            <strong>Service area</strong>
+            <span>Greenfield, Saratoga Springs, Wilton, Corinth, Lake Luzerne, Ballston Spa, and nearby Saratoga County communities.</span>
+          </li>
+          <li>
+            <strong>Quote by text</strong>
+            <span>Send photos of the property, your town, and the landscaping work you need done for a faster quote.</span>
+          </li>
+          <li>
+            <strong>Residential focus</strong>
+            <span>Reliable local lawn care and property maintenance from a Greenfield, NY based business.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
     <section class="services" id="services" aria-labelledby="services-title">
       <div class="container">
         <div class="section-head">
           <div>
             <h2 id="services-title">What can we help with?</h2>
           </div>
-          <p>Tap a service to jump into related photos, or text Jacob directly with the job type already filled in.</p>
+          <p>Local lawn mowing, mulch, hedge trimming, cleanup, and landscape maintenance for Greenfield, Saratoga Springs, Wilton, and nearby areas.</p>
         </div>
 
         <div class="services-grid">
           <article class="service-card" data-gallery-target="lawn" tabindex="0">
             <span class="view-gallery-badge">View Gallery</span>
-            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-lawn-2.jpg" alt="Freshly mowed lawn" decoding="async" />
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-lawn-2.jpg" alt="Freshly mowed lawn by Jasco's Landscaping in Greenfield NY" decoding="async" />
             <div class="service-content">
               <h3>Lawn Mowing</h3>
-              <p>Clean cuts, reliable scheduling, and sharp curb appeal.</p>
+              <p>Clean cuts, reliable scheduling, and sharp curb appeal around Greenfield, Saratoga Springs, and Wilton.</p>
               <a class="text-now-link" href="sms:+18382025311?body=Hi%20Jasco%27s%20Landscaping%2C%20I%20would%20like%20a%20quote%20for%20lawn%20mowing.%20Please%20let%20me%20know%20your%20next%20available%20time.">Text For Quote</a>
             </div>
           </article>
 
           <article class="service-card" data-gallery-target="mulch" tabindex="0">
             <span class="view-gallery-badge">View Gallery</span>
-            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-mulch-1.jpg" alt="Fresh mulch installation" decoding="async" />
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-mulch-1.jpg" alt="Fresh mulch installation for residential landscaping in Greenfield NY" decoding="async" />
             <div class="service-content">
               <h3>Mulch Installation</h3>
-              <p>Fresh beds, cleaner borders, and a finished look.</p>
+              <p>Fresh beds, cleaner borders, and a finished look for local homes and properties.</p>
               <a class="text-now-link" href="sms:+18382025311?body=Hi%20Jasco%27s%20Landscaping%2C%20I%20would%20like%20a%20quote%20for%20mulch%20installation.%20Please%20let%20me%20know%20your%20next%20available%20time.">Text For Quote</a>
             </div>
           </article>
 
           <article class="service-card" data-gallery-target="hedge" tabindex="0">
             <span class="view-gallery-badge">View Gallery</span>
-            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-hedge-2.jpg" alt="Trimmed hedge line" decoding="async" />
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-hedge-2.jpg" alt="Trimmed hedge line for Saratoga County landscape maintenance" decoding="async" />
             <div class="service-content">
               <h3>Hedge Trimming</h3>
-              <p>Neat edges and shaped greenery around your property.</p>
+              <p>Neat edges and shaped greenery for yards, walkways, and property lines.</p>
               <a class="text-now-link" href="sms:+18382025311?body=Hi%20Jasco%27s%20Landscaping%2C%20I%20would%20like%20a%20quote%20for%20hedge%20trimming.%20Please%20let%20me%20know%20your%20next%20available%20time.">Text For Quote</a>
             </div>
           </article>
 
           <article class="service-card" data-gallery-target="equipment" tabindex="0">
             <span class="view-gallery-badge">View Gallery</span>
-            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-equipment.jpg" alt="Jasco's Landscaping equipment" decoding="async" />
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-equipment.jpg" alt="Jasco's Landscaping lawn care equipment in Greenfield NY" decoding="async" />
             <div class="service-content">
               <h3>Cleanup & Maintenance</h3>
-              <p>Seasonal cleanup, edging, and ongoing property care.</p>
+              <p>Seasonal cleanup, edging, and ongoing property care for local residential landscapes.</p>
               <a class="text-now-link" href="sms:+18382025311?body=Hi%20Jasco%27s%20Landscaping%2C%20I%20would%20like%20a%20quote%20for%20cleanup%20and%20property%20maintenance.%20Please%20let%20me%20know%20your%20next%20available%20time.">Text For Quote</a>
             </div>
           </article>
@@ -1113,7 +1265,7 @@
           <div>
             <h2 id="gallery-title">Our Work</h2>
           </div>
-          <p>Browse recent lawn care, mulch, planting bed, walkway, hedge trimming, and property work. Click any photo to view it larger.</p>
+          <p>Browse recent Greenfield and Saratoga County lawn care, mulch, planting bed, walkway, hedge trimming, and property maintenance work. Click any photo to view it larger.</p>
         </div>
 
         <div class="gallery-tools" aria-label="Gallery filters">
@@ -1128,7 +1280,7 @@
 
         <div class="gallery-grid">
           <button class="gallery-item featured" type="button" data-category="equipment">
-            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-equipment.jpg" data-full="assets/fast/full-equipment.jpg" alt="Jasco's Landscaping equipment on site" decoding="async" />
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-equipment.jpg" data-full="assets/fast/full-equipment.jpg" alt="Jasco's Landscaping equipment on a Greenfield NY job site" decoding="async" />
             <span class="item-label">Equipment</span>
           </button>
 
@@ -1143,22 +1295,22 @@
           </button>
 
           <button class="gallery-item" type="button" data-category="hardscape">
-            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-stone-paver-patio-walkway-installation-greenfield-ny.jpg" data-full="assets/fast/full-stone-paver-patio-walkway-installation-greenfield-ny.jpg" alt="Stone paver patio walkway installation by Jasco's Landscaping" decoding="async" />
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-stone-paver-patio-walkway-installation-greenfield-ny.jpg" data-full="assets/fast/full-stone-paver-patio-walkway-installation-greenfield-ny.jpg" alt="Stone paver patio walkway installation by Jasco's Landscaping in Greenfield NY" decoding="async" />
             <span class="item-label">Walkways</span>
           </button>
 
           <button class="gallery-item" type="button" data-category="lawn">
-            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-lawn-1.jpg" data-full="assets/fast/full-lawn-1.jpg" alt="Lawn care work by Jasco's Landscaping" decoding="async" />
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-lawn-1.jpg" data-full="assets/fast/full-lawn-1.jpg" alt="Lawn care and landscape maintenance work by Jasco's Landscaping in Greenfield NY" decoding="async" />
             <span class="item-label">Lawn Care</span>
           </button>
 
           <button class="gallery-item" type="button" data-category="lawn">
-            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-lawn-2.jpg" data-full="assets/fast/full-lawn-2.jpg" alt="Freshly mowed lawn stripes" decoding="async" />
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-lawn-2.jpg" data-full="assets/fast/full-lawn-2.jpg" alt="Freshly mowed lawn stripes for residential lawn service near Saratoga Springs NY" decoding="async" />
             <span class="item-label">Lawn Care</span>
           </button>
 
           <button class="gallery-item" type="button" data-category="lawn">
-            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-lawn-3.jpg" data-full="assets/fast/full-lawn-3.jpg" alt="Residential lawn care result" decoding="async" />
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-lawn-3.jpg" data-full="assets/fast/full-lawn-3.jpg" alt="Residential lawn care result for a Greenfield NY home" decoding="async" />
             <span class="item-label">Lawn Care</span>
           </button>
 
@@ -1183,17 +1335,17 @@
           </button>
 
           <button class="gallery-item featured" type="button" data-category="mulch">
-            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-mulch-1.jpg" data-full="assets/fast/full-mulch-1.jpg" alt="Mulch bed installation" decoding="async" />
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-mulch-1.jpg" data-full="assets/fast/full-mulch-1.jpg" alt="Mulch bed installation by Jasco's Landscaping in Greenfield NY" decoding="async" />
             <span class="item-label">Mulch</span>
           </button>
 
           <button class="gallery-item" type="button" data-category="mulch">
-            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-mulch-2.jpg" data-full="assets/fast/full-mulch-2.jpg" alt="Finished mulch around landscaping" decoding="async" />
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-mulch-2.jpg" data-full="assets/fast/full-mulch-2.jpg" alt="Finished mulch around residential landscaping near Wilton NY" decoding="async" />
             <span class="item-label">Mulch</span>
           </button>
 
           <button class="gallery-item" type="button" data-category="mulch">
-            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-mulch-3.jpg" data-full="assets/fast/full-mulch-3.jpg" alt="Fresh mulch and clean garden bed" decoding="async" />
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-mulch-3.jpg" data-full="assets/fast/full-mulch-3.jpg" alt="Fresh mulch and clean garden bed for Saratoga County landscaping" decoding="async" />
             <span class="item-label">Mulch</span>
           </button>
 
@@ -1203,7 +1355,7 @@
           </button>
 
           <button class="gallery-item" type="button" data-category="mulch">
-            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-black-mulch-installation-landscape-bed-service-greenfield-ny.jpg" data-full="assets/fast/full-black-mulch-installation-landscape-bed-service-greenfield-ny.jpg" alt="Black mulch installation around shrubs and landscape beds" decoding="async" />
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-black-mulch-installation-landscape-bed-service-greenfield-ny.jpg" data-full="assets/fast/full-black-mulch-installation-landscape-bed-service-greenfield-ny.jpg" alt="Black mulch installation around shrubs and landscape beds in Greenfield NY" decoding="async" />
             <span class="item-label">Mulch</span>
           </button>
 
@@ -1213,17 +1365,17 @@
           </button>
 
           <button class="gallery-item" type="button" data-category="hedge">
-            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-hedge-1.jpg" data-full="assets/fast/full-hedge-1.jpg" alt="Hedge trimming work" decoding="async" />
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-hedge-1.jpg" data-full="assets/fast/full-hedge-1.jpg" alt="Hedge trimming work by Jasco's Landscaping near Saratoga Springs NY" decoding="async" />
             <span class="item-label">Hedge</span>
           </button>
 
           <button class="gallery-item featured" type="button" data-category="hedge">
-            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-hedge-2.jpg" data-full="assets/fast/full-hedge-2.jpg" alt="Tall trimmed hedges beside a lawn" decoding="async" />
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-hedge-2.jpg" data-full="assets/fast/full-hedge-2.jpg" alt="Tall trimmed hedges beside a lawn in Wilton NY" decoding="async" />
             <span class="item-label">Hedge</span>
           </button>
 
           <button class="gallery-item" type="button" data-category="hedge">
-            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-hedge-3.jpg" data-full="assets/fast/full-hedge-3.jpg" alt="Clean hedge trimming and lawn care" decoding="async" />
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="assets/fast/thumb-hedge-3.jpg" data-full="assets/fast/full-hedge-3.jpg" alt="Clean hedge trimming and lawn care maintenance in Greenfield NY" decoding="async" />
             <span class="item-label">Hedge</span>
           </button>
         </div>
@@ -1235,7 +1387,7 @@
         <div class="contact-panel">
           <div>
             <h2 id="contact-title">Ready to clean up your property?</h2>
-            <p>Text photos of the job, your location, and what you need done. The quote prompt is already filled in for you.</p>
+            <p>Text photos of the job, your location in Greenfield, Saratoga Springs, Wilton, or a nearby community, and what you need done. The quote prompt is already filled in for you.</p>
           </div>
           <div class="contact-actions">
             <a class="btn btn-primary" href="sms:+18382025311?body=Hi%20Jasco%27s%20Landscaping%2C%20I%20would%20like%20a%20quote%20for%20landscaping%20services.%20Please%20let%20me%20know%20your%20next%20available%20time.">
@@ -1251,7 +1403,7 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>&copy; 2026 Jasco's Landscaping. Serving Greenfield, Saratoga Springs, Wilton, Corinth, Lake Luzerne, and Ballston Spa.</p>
+      <p>&copy; 2026 Jasco's Landscaping. Greenfield, NY based landscaping serving Greenfield, Saratoga Springs, Wilton, Corinth, Lake Luzerne, and Ballston Spa.</p>
       <div class="footer-links">
         <a href="tel:+18382025311">(838) 202-5311</a>
         <a href="mailto:Jacoblafaver942@gmail.com">Jacoblafaver942@gmail.com</a>
@@ -1271,7 +1423,7 @@
     <div class="modal-dialog">
       <button class="modal-close" type="button" aria-label="Close gallery image">&times;</button>
       <div class="modal-image-wrap">
-        <img class="modal-image" id="modalImage" src="" width="1400" height="1050" alt="" />
+        <img class="modal-image" id="modalImage" src="" width="1400" height="1050" alt="Expanded Jasco's Landscaping project photo" />
       </div>
     </div>
   </div>
@@ -1391,7 +1543,7 @@
       modal.classList.remove("is-open");
       modal.setAttribute("aria-hidden", "true");
       modalImage.src = "";
-      modalImage.alt = "";
+      modalImage.alt = "Expanded Jasco's Landscaping project photo";
       document.body.classList.remove("modal-open");
     }
 
